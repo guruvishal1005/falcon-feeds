@@ -1,0 +1,18 @@
+services:
+  scraper:
+    build: .
+    image: falconfeeds-scraper:latest
+    env_file: .env
+    environment:
+      FF_IN_DOCKER: "1"
+    # Host uid/gid so ./data is writable. pwuser in the image is 1001.
+    user: "1000:984"
+    volumes:
+      - ./data:/data
+    shm_size: 1gb
+    ipc: host
+    init: true
+    restart: unless-stopped
+    # Default is the live watcher. One-shot examples:
+    #   docker compose run --rm scraper --mail-limit 1 --max-per-run 1
+    #   docker compose run --rm scraper --backfill

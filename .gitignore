@@ -1,0 +1,16 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+data/
+
+# Scraper artefacts
+source_urls.csv
+*.csv
+*.eml
+*.mbox
+*.state.json
+profile/
+login_page.png
+login_form_dump.html
+_ff_main.js

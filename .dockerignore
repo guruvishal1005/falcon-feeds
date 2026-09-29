@@ -1,0 +1,14 @@
+.venv
+.git
+.gitignore
+__pycache__
+*.pyc
+*.csv
+*.md
+.env
+data
+profile
+urls.txt
+falconfeeds-scraper.service
+docker-compose.yml
+agent-transcripts
